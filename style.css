@@ -1,181 +1,253 @@
-@import "https://fonts.googleapis.com/css?family=Poppins";
-
-/* HTML Page */
-
-body {
-    overflow-x: hidden;
-    margin: 0px;
-    padding: 0px;
-    font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Helvetica", "Arial";
-}
-
-a {
-    text-decoration: none;
-    color: rgb(52, 133, 226);
-}
-
-/* Navbar Styles */
-
-nav {
-    padding: 0px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5vh;
-    width: 100%;
-    background-color: rgba(22, 22, 22, 0.8);
-    -webkit-backdrop-filter: blur(10px);
+html {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    overflow: overlay;
+  }
+  
+  ::-webkit-scrollbar {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #3232322f;
+  }
+  
+  .limited-area {
+    margin: 0 auto;
+    max-width: 980px;
+    width: 96%;
+  }
+  
+  main {
+    margin: 0 auto;
+    max-width: 2500px;
+  }
+  
+  .header {
+    background-color: #161617CC;
     backdrop-filter: blur(10px);
-    z-index: 1;
-}
-
-.navlinks {
+    transition: 1.6s;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    list-style-type: none;
-    flex-wrap: wrap;
-    margin: 0px;
-    padding: 0px;
-    font-size: 13px;
-    padding: 12px;
-}
-
-.navicon {
-    margin-left: 25px;
-}
-
-.navlink {
-    margin-inline: 15px;
-    color: #d3d3d3;
-}
-
-.responsivediv {
+    align-items: center;
+    height: 44px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+  }
+  
+  .menu {
     display: flex;
-}
-
-.respnavbar {
-    display: none;
-}
-
-.applelogo {
-    margin-inline: 25px;
-    margin-top: -2.9px;
-}
-
-/* The info box below the Navbar */
-
-.infobartext {
-    margin-top: 50px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-}
-
-.infobar {
-    background-color: white;
+    width: 100%;
     height: 100%;
-    padding: 10px;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-}
-
-/* Main page - 1 -> iPhone 14 Pro */
-
-.mainpage1 {
-    background-image: url("https://www.apple.com/in/home/images/heroes/iphone-14-pro/hero_iphone14pro_spring__9xo85pm6sbmm_largetall.jpg");
-    height: 588px;
-    background-position: center -35px;
-    background-position-x: center;
-}
-
-.mp1-text {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    color: white;
-}
-
-.mp1-title1 {
-    margin-top: 30px;
-    font-size: 50px;
-    font-weight: bolder;
-}
-
-.mp1-title2 {
-    font-size: 25px;
-}
-
-.mainpagelink {
-    font-size: 20px;
-}
-
-/* Main page - 2 -> iPhone 14 */
-
-.mainpage2 {
-    background-image: url("https://www.apple.com/in/home/heroes/iphone-14/images/hero_iphone14_yellow__eun20sn4imi6_largetall.jpg");
-    background-position-x: center;
-    height: 82vh;
-    width: 100vw;
-}
-
-.mp-default-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(34, 34, 34);
-    line-height: 30px;
-}
-
-.mp2-title1 {
-    margin-top: 60px;
-    font-size: 50px;
-    font-weight: bolder;
-    margin-bottom: 15px;
-}
-
-.mp2-desc {
-    font-size: 23px;
-}
-
-.mainpagelink {
-    font-size: 20px;
-}
-
-
-.mainpage3 {
-    background-image: url("https://www.apple.com/in/home/images/heroes/apple-watch-series-8/hero_apple_watch_series_8_spring__b1y8wb7xjc9y_largetall.jpg");
-    height: 78vh;
-    background-position-x: center;
-}
-
-.mp3desc {
-    font-size: 23px;
-    color: white;
-    margin-bottom: 15px;
-}
-
-
-
-.mainpage4 {
+    height: 44px;
+  }
+  
+  .btn-menu {
+    width: 30px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    margin: 0;
+  }
+  
+  .btn-menu span {
+    display: block;
+    width: 15px;
+    height: 1px;
+    margin: 6px 0;
     background-color: white;
+    transition: 0.5s;
+  }
+  
+  .pesquisa-menu {
+    display: none;
+  }
+  
+  .links-menu {
+    height: 44px;
+  }
+  
+  .ul-pesquisa li,
+  .ul-pesquisa img {
+    height: 100%;
+  }
+  
+  .span-bt {
+    display: block;
+    width: 15px;
+    height: 1px;
+    margin: 6px 0;
+    background-color: white;
+    transition: 0.5s;
+  }
+  
+  .btn-menu {
+    display: none;
+  }
+  
+  .container-sacola {
+    position: absolute;
+    top: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1240px;
+    width: 100vw;
+  }
+  
+  .sacola {
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 4px;
+    padding-bottom: 10px;
+    z-index: 11;
+  }
+  
+  .sacola-active {
     display: flex;
-    flex-wrap: wrap;
-}
+  }
+  
+  .seta-sacola {
+    position: absolute;
+    max-width: 100%;
+    width: 286px;
+    height: 10px;
+    left: 3px;
+    bottom: -9px;
+    display: block;
+    z-index: 10;
+  }
 
-.grid-item {
-    flex-basis: 49%;
-    margin: 5px;
-}
+  
+  .seta-active span {
+    display: block;
+  }
+  
+  .svg-sacola {
+    position: relative;
+  }
+  
+  .svg-sacola:hover {
+    cursor: pointer;
+  }
 
-.applewatchlogo {
-    margin-top: 60px;
-}
+  
+  .content-sacola p {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 0;
+    padding-top: 33px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    color: rgb(126, 126, 126);
+  }
+  
+  .links-sacola {
+    width: 100%;
+  }
+  
+  .links-sacola ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 8%;
+    padding-bottom: 10px;
+  }
+  
 
-.applewatchcontainer {
-    margin-top: 50px;
-}
-
+  
+  .links-sacola li:nth-child(1) {
+    background-image: url(https://www.apple.com/ac/globalnav/7/pt_BR/assets/ac-store/bag.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 45px;
+  }
+  
+  .links-sacola li:nth-child(2) {
+    background-image: url(https://www.apple.com/ac/globalnav/7/pt_BR/assets/ac-store/savedbyyou.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 45px;
+  }
+  
+  .links-sacola li:nth-child(3) {
+    background-image: url(https://www.apple.com/ac/globalnav/7/pt_BR/assets/ac-store/orders.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 45px;
+  }
+  
+  .links-sacola li:nth-child(4) {
+    background-image: url(https://www.apple.com/ac/globalnav/7/pt_BR/assets/ac-store/account.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 45px;
+  }
+  
+  .links-sacola li:nth-child(5) {
+    background-image: url(https://www.apple.com/ac/globalnav/7/pt_BR/assets/ac-store/signIn.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 45px;
+  }
+  
+  .remove-sacola {
+    display: none;
+  }
+  
+  .contain-header {
+    text-align: center;
+  }
+  
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+  }
+  
+  .ul-pesquisa {
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .link-topo {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+  
+  .links-menu a {
+    color: rgb(204, 204, 204);
+    text-decoration: none;
+    line-height: 3.8em;
+    font-size: 12px;
+    transition: 0.5s;
+    padding: 0 1px;
+  }
+  
+  .links-menu a:hover {
+    color: white;
+    transition: 0.5s;
+  }
+  
+  .svg-pesquisa {
+    height: 100%;
+    width: 17px;
+    object-fit: cover;
+    object-position: 0px -3px;
+    overflow-y: hidden;
+  }
+  
